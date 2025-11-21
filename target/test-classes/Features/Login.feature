@@ -1,5 +1,5 @@
 
-@smoke
+
 Feature: User login funchionality 
 Scenario: User login using valid credentials
 Given User launches in Homepage
