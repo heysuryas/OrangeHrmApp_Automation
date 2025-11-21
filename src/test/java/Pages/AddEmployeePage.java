@@ -1,9 +1,16 @@
 
 package Pages;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddEmployeePage {
 
@@ -29,42 +36,86 @@ public class AddEmployeePage {
     @FindBy(name="lastName")
     private WebElement Lastname;
     
-    @FindBy(name="//label[text()='Employee Id']/parent::div/following-sibling::div//input")
-    private WebElement Employeeid;		
+    @FindBy(xpath="//label[text()='Employee Id']/parent::div/following-sibling::div//input")
+    private WebElement Employeeidfld;		
     	
     @FindBy(xpath="//button[@type='submit']")
     private WebElement savebtn;
   
+    @FindBy(xpath = "//div[@class='oxd-toast-content oxd-toast-content--success']")
+    private WebElement successToast; 
     
-    //Employee list elements
-      @FindBy(xpath="//span[contains(normalize-space(),'PIM')]")
-      private WebElement PIMsection;
-
-      @FindBy(xpath="//input[@placeholder=\"Type for hints...\"]")
-      private WebElement Employeenamefld;
-
-      @FindBy(xpath="//a[contains(text(),'Employee List')]")
-      private WebElement Employeelst;
-
-      @FindBy(xpath="//label[text()='Employee Id']/parent::div/following-sibling::div//input")
-       private WebElement Employeeidfld;
-
-      @FindBy(xpath="//label[text()='Employment Status']/parent::div/following-sibling::div//div")
-      private WebElement Empstatusfld;
-
-      @FindBy(xpath="//div[contains(text(),'Current Employees Only')]")
-      private WebElement includefld;
-      
-      @FindBy(xpath="//label[text()='Supervisor Name']/parent::div/following-sibling::div//div")
-      private WebElement Supervisor;
-
-      
+    @FindBy(xpath="//span[contains(normalize-space(),'PIM')]")
+    private WebElement PIMsection;
     
     
-    // Add Employee page methods
-      
-    // Employee list methods
-      
+   
     
     
+    // ------------------- Add Employee Page Methods -------------------
+
+    public void click_PIMSection() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(PIMsection));
+        PIMsection.click();
+    }
+
+    public void click_AddEmployee() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(Addempbtn));
+        Addempbtn.click();
+    }
+    
+    
+    public void forceClear(WebElement element) {
+        element.click();
+        element.sendKeys(Keys.CONTROL + "a");
+        element.sendKeys(Keys.DELETE);
+    }
+
+    public void enterFormDetails(String fname, String lname, String empId) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(Firstname));
+
+        
+        
+        forceClear(Employeeidfld);
+        Firstname.sendKeys(fname);
+        Lastname.sendKeys(lname);
+        Employeeidfld.sendKeys(empId);
+
+        
+    }
+    public void waitForLoaderToDisappear() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.cssSelector("div.oxd-form-loader")
+        ));
+    }
+
+    public void Click_savebtn() {
+    	waitForLoaderToDisappear();
+    	savebtn.click();
+    }
+    
+    public String getSuccessMessage() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        WebElement toast = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("div.oxd-toast.oxd-toast--success .oxd-toast-content")
+                )
+        );
+
+        return toast.getText();
+     
+    }
 }
+    
+    
+    
+    
+    
+    
+    
+ 
