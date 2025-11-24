@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import Pages.Loginpage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -37,7 +38,20 @@ public class Hooks {
         driver.get("https://opensource-demo.orangehrmlive.com/");
         System.out.println("=== Browser Launched ===");
     }
+    
+    
+    @Before("@LoginRequired")
+    public void login() {
+        driver.get("https://opensource-demo.orangehrmlive.com/");
 
+        // Login page object
+        Loginpage login = new Loginpage(driver);
+
+        login.logindetails("Admin","admin123");
+        login.loginbtnclick();
+
+        System.out.println("=== User Logged In ===");
+    }
     @After
     public void tearDown(Scenario scenario) {
 

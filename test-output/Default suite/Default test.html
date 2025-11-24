@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Nov 21 13:34:42 IST 2025</td>
+<td>Started on:</td><td>Mon Nov 24 17:21:37 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>35 seconds (35251 ms)</td>
+<tr><td>Total time:</td><td>42 seconds (42905 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,23 +77,31 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Utilities.Testrunner.runScenario()'><b>runScenario</b><br>Test class: Utilities.Testrunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a new employee and verify it appears in the employee list", "Add Employee Functionality"</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at Steps.AddEmployeeSteps.the_employee_record_should_be_displayed_in_the_results(AddEmployeeSteps.java:91)
-	at ✽.The employee record should be displayed in the results(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:28)
-</pre></div><a href='#' onClick='toggleBox("stack-trace292890110", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace292890110'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at Steps.AddEmployeeSteps.the_employee_record_should_be_displayed_in_the_results(AddEmployeeSteps.java:91)
-	at ✽.The employee record should be displayed in the results(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:28)
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Pages.AddEmployeePage.getSuccessMessage(AddEmployeePage.java:108)
+	at Steps.AddEmployeeSteps.a_success_message_should_be_displayed(AddEmployeeSteps.java:62)
+	at ✽.A success message &quot;Success&quot; should be displayed(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:21)
+</pre></div><a href='#' onClick='toggleBox("stack-trace87035052", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace87035052'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Pages.AddEmployeePage.getSuccessMessage(AddEmployeePage.java:108)
+	at Steps.AddEmployeeSteps.a_success_message_should_be_displayed(AddEmployeeSteps.java:62)
+	at ✽.A success message &quot;Success&quot; should be displayed(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:21)
 </pre></div></td>
-<td>34</td>
+<td>42</td>
 <td>Utilities.Testrunner@7d20d0b</td></tr>
 </table><p>
 </body>

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="34.733" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Add Employee Functionality" name="Add a new employee and verify it appears in the employee list" time="34.525">
-<failure type="java.lang.AssertionError" message="expected [true] but found [false]">
-<![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at Steps.AddEmployeeSteps.the_employee_record_should_be_displayed_in_the_results(AddEmployeeSteps.java:91)
-	at ✽.The employee record should be displayed in the results(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:28)
+<testsuite name="Cucumber" time="42.383" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Add Employee Functionality" name="Add a new employee and verify it appears in the employee list" time="42.173">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Pages.AddEmployeePage.getSuccessMessage(AddEmployeePage.java:108)
+	at Steps.AddEmployeeSteps.a_success_message_should_be_displayed(AddEmployeeSteps.java:62)
+	at ✽.A success message "Success" should be displayed(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:21)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -21,11 +30,11 @@ When User navigates to the PIM module.......................................pass
 And User opens the Add Employee page........................................passed
 And User provides the employee details:.....................................passed
 And User saves the employee.................................................passed
-Then A success message "Success" should be displayed........................passed
-When User navigates to the Employee List page...............................passed
-And User searches for the employee using:...................................passed
-And User clicks on Search...................................................passed
-Then The employee record should be displayed in the results.................failed
+Then A success message "Success" should be displayed........................failed
+When User navigates to the Employee List page...............................skipped
+And User searches for the employee using:...................................skipped
+And User clicks on Search...................................................skipped
+Then The employee record should be displayed in the results.................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

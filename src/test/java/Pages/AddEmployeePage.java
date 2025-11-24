@@ -68,13 +68,17 @@ public class AddEmployeePage {
     
     
     public void forceClear(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
         element.sendKeys(Keys.CONTROL + "a");
         element.sendKeys(Keys.DELETE);
     }
 
+
     public void enterFormDetails(String fname, String lname, String empId) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        waitForLoaderToDisappear();
         wait.until(ExpectedConditions.visibilityOf(Firstname));
 
         

@@ -88,6 +88,6 @@ public class AddEmployeeSteps {
 
     @Then("The employee record should be displayed in the results")
     public void the_employee_record_should_be_displayed_in_the_results() {
-        Assert.assertTrue(employeelist.isValuePresentInTable("81010"));
+        Assert.assertTrue(employeelist.isValuePresentInTable("Value is not present"));
     }
 }

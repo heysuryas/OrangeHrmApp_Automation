@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-21T13:34:42 IST" name="Default suite" finished-at="2025-11-21T13:35:17 IST" duration-ms="35251">
+  <suite started-at="2025-11-24T17:21:37 IST" name="Default suite" finished-at="2025-11-24T17:22:20 IST" duration-ms="42905">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Utilities.Testrunner@7d20d0b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-11-21T13:34:42 IST" name="Default test" finished-at="2025-11-21T13:35:17 IST" duration-ms="35251">
+    <test started-at="2025-11-24T17:21:37 IST" name="Default test" finished-at="2025-11-24T17:22:20 IST" duration-ms="42905">
       <class name="Utilities.Testrunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Utilities.Testrunner@7d20d0b]" started-at="2025-11-21T13:34:42 IST" name="setUpClass" finished-at="2025-11-21T13:34:43 IST" duration-ms="513" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Utilities.Testrunner@7d20d0b]" started-at="2025-11-24T17:21:37 IST" name="setUpClass" finished-at="2025-11-24T17:21:38 IST" duration-ms="519" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@623ebac7]]>
+                <![CDATA[org.testng.TestRunner@1716e8c5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Utilities.Testrunner@7d20d0b]" started-at="2025-11-21T13:34:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-21T13:35:17 IST" duration-ms="34640" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Utilities.Testrunner@7d20d0b]" started-at="2025-11-24T17:21:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-24T17:22:20 IST" duration-ms="42290" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -34,25 +34,34 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at org.testng.Assert.assertTrue(Assert.java:67)
-at Steps.AddEmployeeSteps.the_employee_record_should_be_displayed_in_the_results(AddEmployeeSteps.java:91)
-at ✽.The employee record should be displayed in the results(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:28)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Pages.AddEmployeePage.getSuccessMessage(AddEmployeePage.java:108)
+at Steps.AddEmployeeSteps.a_success_message_should_be_displayed(AddEmployeeSteps.java:62)
+at ✽.A success message "Success" should be displayed(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:21)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Utilities.Testrunner@7d20d0b]" started-at="2025-11-21T13:35:17 IST" name="tearDownClass" finished-at="2025-11-21T13:35:17 IST" duration-ms="59" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Utilities.Testrunner@7d20d0b]" started-at="2025-11-24T17:22:20 IST" name="tearDownClass" finished-at="2025-11-24T17:22:20 IST" duration-ms="55" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
