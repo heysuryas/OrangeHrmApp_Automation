@@ -40,18 +40,7 @@ public class Hooks {
     }
     
     
-    @Before("@LoginRequired")
-    public void login() {
-        driver.get("https://opensource-demo.orangehrmlive.com/");
 
-        // Login page object
-        Loginpage login = new Loginpage(driver);
-
-        login.logindetails("Admin","admin123");
-        login.loginbtnclick();
-
-        System.out.println("=== User Logged In ===");
-    }
     @After
     public void tearDown(Scenario scenario) {
 
