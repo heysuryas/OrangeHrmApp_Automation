@@ -27,19 +27,21 @@ public class Recruitment_Steps {
 	//verify the dashboard page 
 	Assert.assertTrue(Recruitmentpage.user_inDashboardpage());
 	    }
+
+
 @When("User clicks on Recruitment module")
 public void user_clicks_recruitmentmod() {
 	Recruitmentpage.Recruitment_mod_click();
 	
 }
-@And("User click on Add module")
+@And("click on Add module")
 public void user_clicks_candidatemod() {
 	Recruitmentpage.Add_button_click();
 
 }
 
 
-@And("And enters candidate details")
+@And("enters candidate details")
 public void user_enters_candidatedtls(DataTable dataTable)  {
 	Map<String, String> data = dataTable.asMaps().get(0);
 	Recruitmentpage.candidate_dtls(
@@ -82,12 +84,13 @@ public void user_search_click() {
 }
 @Then("Candidate name is visible")
 public void username_isvisible() {
-	
+	        Assert.assertTrue(Recruitmentpage.isValuePresentInTable("Value is not present"));
+	    }
 	
 }
 
 
-}
+
 
 
 
