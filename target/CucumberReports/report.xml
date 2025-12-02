@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="42.383" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Add Employee Functionality" name="Add a new employee and verify it appears in the employee list" time="42.173">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: div.oxd-toast.oxd-toast--success .oxd-toast-content (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.164, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SEM-UX~3\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54711}, goog:processID: 24316, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54711/devtoo..., se:cdpVersion: 142.0.7444.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2e5dccd7af76ddf645e04fd91fa6d3ee
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at Pages.AddEmployeePage.getSuccessMessage(AddEmployeePage.java:108)
-	at Steps.AddEmployeeSteps.a_success_message_should_be_displayed(AddEmployeeSteps.java:62)
-	at ✽.A success message "Success" should be displayed(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:21)
-]]>
-</failure>
+<testsuite name="Cucumber" time="8.712" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Recruitment Add candidate funchionality" name="Add candidate on Recuritment module" time="8.457">
+<failure/>
 <system-out><![CDATA[
 Given User launches in Homepage.............................................passed
 When User enters below details..............................................passed
 And User clicks on Login button.............................................passed
 Then User dashboard page is visible.........................................passed
-Given User is on the Dashboard page.........................................passed
-When User navigates to the PIM module.......................................passed
-And User opens the Add Employee page........................................passed
-And User provides the employee details:.....................................passed
-And User saves the employee.................................................passed
-Then A success message "Success" should be displayed........................failed
-When User navigates to the Employee List page...............................skipped
-And User searches for the employee using:...................................skipped
-And User clicks on Search...................................................skipped
-Then The employee record should be displayed in the results.................skipped
+Given User in Dashboard page................................................passed
+When User clicks on Recruitment module......................................passed
+And click on candidates module..............................................undefined
+And enters candidate details................................................skipped
+And clicks on consent check box.............................................skipped
+And clicks on save button...................................................skipped
+When User enters candidate name.............................................skipped
+And clicks on search button.................................................skipped
+Then Candidate name is visible..............................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

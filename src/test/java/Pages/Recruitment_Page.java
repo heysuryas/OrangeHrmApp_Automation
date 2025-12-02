@@ -32,6 +32,9 @@ public class Recruitment_Page {
        @FindBy(name="firstName") 
        private WebElement firstnamefld;
        
+       @FindBy(name="lastName") 
+       private WebElement lastnamefld;
+       
        
        @FindBy(xpath="//label[text()='Vacancy']/parent::div/following-sibling::div//div[contains(@class,'select-text')]") 
        private WebElement vaccanydropdown;
@@ -56,8 +59,20 @@ public class Recruitment_Page {
        @FindBy(xpath="//button[@type='submit']") 
        private WebElement savebtn;
        
-     
-       private final String OPTION_LOCATOR_TEMPLATE = "//div[@role='option']//span[text()='{}']";
+       @FindBy(xpath=" //a[text()='Candidates']")
+       private WebElement candidatemod;
+       
+       @FindBy(xpath="//button[@type='submit']") 
+       private WebElement submitbtn;
+       
+       @FindBy(xpath = "//div[contains(@class,'oxd-toast')]//p[contains(text(),'Success')]")
+       private WebElement successMsg;
+
+       
+        @FindBy(xpath=")//label[normalize-space()='Name']/ancestor::div[contains(@class,'oxd-input-group')]//p")
+        private WebElement verifynamefld;
+
+        private final String OPTION_LOCATOR_TEMPLATE = "//div[@role='option']//span[text()='{}']";
        
    // declare methods
        
@@ -90,26 +105,7 @@ public class Recruitment_Page {
        public void Add_button_click() {
     	   Addbtn.click(); 
        }
-       
-       
-    
-       public void candidate_dtls(String fname, String vacancy, String email, String contact,String date,String keywords) {
-    	   firstnamefld.sendKeys(fname);
-    	   
-    	   Emailfld.sendKeys(email);
-    	   datefld.sendKeys(date);
-    	   contactnumber.sendKeys(contact);
-    	   Keywords .sendKeys(keywords);
-    	// VACANCY FIELD: Two-step click logic
-           // 1. Click the main dropdown element to reveal the list
-           vaccanydropdown.click(); 
-           
-           // 2. Select the specific option using the passed 'vacancy' text
-           selectVacancyOption(vacancy); 
-       
-    	      
-       }
-    
+ 
        public void checkbox_click() {
     	   if (!checkboxbtn.isSelected()) {
        	    checkboxbtn.click();
@@ -119,13 +115,55 @@ public class Recruitment_Page {
        public void save_clickbtn() {
     	   savebtn.click();
        }
+
+
+	   public boolean isSuccessMessageDisplayed() {
+		    try {
+		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		        wait.until(ExpectedConditions.visibilityOf(successMsg));
+		        return successMsg.isDisplayed();
+		    } catch (Exception e) {
+		        return false;
+		    }
+		}
+
+	   public void verify_isnamevisible() {
+		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+           wait.until(ExpectedConditions.visibilityOf(verifynamefld));
+           
+	   }  
     
-    
-    
-    
-    
-    
-    
+	   public void check_username(String name)
+	   {
+			// TODO Auto-generated method stub
+		     verifynamefld.sendKeys(name);
+	   }
+	   
+	   public void candidatemod_click() {
+		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		      wait.until(ExpectedConditions.visibilityOf(candidatemod));
+			   candidatemod.click();
+	   }
+
+	   public void candidate_dtls(String fname, String lname, String vacancy, String email) {
+	
+		   
+		// TODO Auto-generated method stub
+		   firstnamefld.sendKeys(fname);
+	    	// VACANCY FIELD: Two-step click logic
+	           // 1. Click the main dropdown element to reveal the list
+		   lastnamefld.sendKeys(lname);
+	       vaccanydropdown.click();   
+	           // 2. Select the specific option using the passed 'vacancy' text
+	       selectVacancyOption(vacancy); 
+	    	Emailfld.sendKeys(email);  
+	   }
+		     	 
+	   
+	   public void submit_click() {
+		   submitbtn.click();
+	   }
+	
     
     
     
