@@ -66,6 +66,9 @@ public class Employeelist {
 
 
     public void searchEmployeeById(String id) {
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.visibilityOf(EmployeeidSearch));
+
     	forceClear(EmployeeidSearch);
     	EmployeeidSearch.sendKeys(id);
        
@@ -80,10 +83,19 @@ public class Employeelist {
     	searchbtn.click();
     }
     public boolean isValuePresentInTable(String value) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("div.oxd-table-body")
+        ));
+
         List<WebElement> elements = driver.findElements(
-                By.xpath("//div[@role='cell' and normalize-space(text())='" + value + "']"));
-        return elements.size() > 0;
+                By.xpath("//div[contains(@class,'oxd-table-cell')][normalize-space()='" + value + "']")
+        );
+
+        return !elements.isEmpty();
     }
+
 }
       
     

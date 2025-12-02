@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="34.733" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Add Employee Functionality" name="Add a new employee and verify it appears in the employee list" time="34.525">
-<failure type="java.lang.AssertionError" message="expected [true] but found [false]">
-<![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at Steps.AddEmployeeSteps.the_employee_record_should_be_displayed_in_the_results(AddEmployeeSteps.java:91)
-	at ✽.The employee record should be displayed in the results(file:///C:/Users/SEM-UX-Surya/eclipse-workspace/OrangeHrmApp_Automation/src/test/resources/features/AddEmployee.feature:28)
-]]>
-</failure>
+<testsuite name="Cucumber" time="8.712" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Recruitment Add candidate funchionality" name="Add candidate on Recuritment module" time="8.457">
+<failure/>
 <system-out><![CDATA[
 Given User launches in Homepage.............................................passed
 When User enters below details..............................................passed
 And User clicks on Login button.............................................passed
 Then User dashboard page is visible.........................................passed
-Given User is on the Dashboard page.........................................passed
-When User navigates to the PIM module.......................................passed
-And User opens the Add Employee page........................................passed
-And User provides the employee details:.....................................passed
-And User saves the employee.................................................passed
-Then A success message "Success" should be displayed........................passed
-When User navigates to the Employee List page...............................passed
-And User searches for the employee using:...................................passed
-And User clicks on Search...................................................passed
-Then The employee record should be displayed in the results.................failed
+Given User in Dashboard page................................................passed
+When User clicks on Recruitment module......................................passed
+And click on candidates module..............................................undefined
+And enters candidate details................................................skipped
+And clicks on consent check box.............................................skipped
+And clicks on save button...................................................skipped
+When User enters candidate name.............................................skipped
+And clicks on search button.................................................skipped
+Then Candidate name is visible..............................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

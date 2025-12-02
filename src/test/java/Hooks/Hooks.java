@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import Pages.Loginpage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -20,7 +21,7 @@ public class Hooks {
 
     public static WebDriver driver;
 
-    @Before
+    @Before("@login")
     public void setUp() {
     	
     	   ChromeOptions options = new ChromeOptions();
@@ -36,7 +37,20 @@ public class Hooks {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://opensource-demo.orangehrmlive.com/");
         System.out.println("=== Browser Launched ===");
+        
+        
+        Loginpage login = new Loginpage(driver);
+
+        login.userinHomepage();
+        login.logindetails("Admin", "admin123");
+        login.loginbtnclick();
+        
+        if (!login.isDashboardVisible()) {
+            throw new RuntimeException("Login failed - Dashboard not visible");
+        }
     }
+    
+    
 
     @After
     public void tearDown(Scenario scenario) {
