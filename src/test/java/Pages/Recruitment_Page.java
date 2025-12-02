@@ -1,5 +1,6 @@
 package Pages;
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import Utilities.Util;
 
 public class Recruitment_Page {
 
@@ -23,6 +26,10 @@ public class Recruitment_Page {
     
     
     //declare elements 
+      @FindBy(xpath="//h6[text()='Dashboard']") 
+       private WebElement dashboardlabel;
+         
+    
        @FindBy(xpath="//span[text()='Recruitment']") 
        private WebElement Recruitmentmod;
      
@@ -53,7 +60,7 @@ public class Recruitment_Page {
        @FindBy(xpath="//label[text()='Keywords']/ancestor::div[contains(@class,'oxd-input-group')]//input") 
        private WebElement Keywords;
      
-       @FindBy(xpath="//input[@type='checkbox']") 
+       @FindBy(xpath="//i[contains(@class,'oxd-checkbox-input-icon')]") 
        private WebElement checkboxbtn;
        
        @FindBy(xpath="//button[@type='submit']") 
@@ -86,19 +93,32 @@ public class Recruitment_Page {
        }
 
        public Boolean user_inDashboardpage() {
-      	   if (driver.getCurrentUrl().contains("dashboard/index")) {
-     		    System.out.println("On Dashboard Page");
-     		}
-      	   else {
-     		  System.out.println("User not in Dashboard page");
-        }
-		   return false;
-         
+  
+	    try {
+        	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        	        wait.until(ExpectedConditions.visibilityOf(dashboardlabel));
+
+        	        boolean status = driver.getCurrentUrl().contains("dashboard/index");
+
+        	        if (status) {
+        	            System.out.println("✅ On Dashboard Page");
+        	        } else {
+        	            System.out.println("❌ User not in Dashboard Page");
+        	        }
+
+        	        return status;
+
+        	    } catch (Exception e) {
+        	        System.out.println("❌ Dashboard verification failed: " + e.getMessage());
+        	        return false;
+        	    }
        }
+
+      	   
        
        public void Recruitment_mod_click() {
-      	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-           wait.until(ExpectedConditions.visibilityOf(Recruitmentmod));
+      	Util.waitForVisibility(driver, Recruitmentmod);
            Recruitmentmod.click();
         }
     
@@ -107,10 +127,10 @@ public class Recruitment_Page {
        }
  
        public void checkbox_click() {
-    	   if (!checkboxbtn.isSelected()) {
-       	    checkboxbtn.click();
-       	}
-       }
+    	    Util.waitForClickable(driver, checkboxbtn);
+    	    checkboxbtn.click();
+    	}
+
     
        public void save_clickbtn() {
     	   savebtn.click();
@@ -163,7 +183,20 @@ public class Recruitment_Page {
 	   public void submit_click() {
 		   submitbtn.click();
 	   }
-	
+	   
+	   public boolean isValuePresentInTable(String value) {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(
+	                By.cssSelector("div.oxd-table-body")
+	        ));
+
+	        List<WebElement> elements = driver.findElements(
+	                By.xpath("//div[contains(@class,'oxd-table-cell')][normalize-space()='" + value + "']")
+	        );
+
+	        return !elements.isEmpty();
+	    }
     
     
     
